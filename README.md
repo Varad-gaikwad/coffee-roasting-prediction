@@ -95,7 +95,7 @@ Output Layer (1 neuron, Sigmoid)
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/Coffee-Roasting-Predictor.git
+git clone https://github.com/Varad-gaikwad/coffee-roasting-prediction.git
 ```
 
 ### 2. Install dependencies
