@@ -119,7 +119,7 @@ Enter roasting temperature (°C): 205
 Enter roasting time (minutes): 13
 
 GOOD ROAST
-Confidence: 97.84%
+
 ```
 
 ---
@@ -129,6 +129,8 @@ Confidence: 97.84%
 The trained model achieved approximately **95% test accuracy** on the provided dataset.
 
 *(Accuracy may vary slightly due to random train-test splitting.)*
+<img width="299" height="132" alt="image" src="https://github.com/user-attachments/assets/e5379736-093f-4167-a86f-db198ff6dff3" />
+
 
 ---
 
