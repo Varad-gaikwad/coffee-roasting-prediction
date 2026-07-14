@@ -1,172 +1,214 @@
-# ☕ Coffee Roasting Quality Predictor using TensorFlow
+# ☕ Coffee Roast Quality Predictor
 
-A beginner-friendly Machine Learning project that predicts whether a coffee roast is **Good** or **Bad** based on roasting **Temperature** and **Time** using a Neural Network built with TensorFlow and Keras.
+A neural network built using **TensorFlow/Keras** to predict whether a coffee roast is **Good** or **Bad** based on roasting temperature and roasting time.
 
----
-
-## 📌 Project Overview
-
-This project demonstrates the complete machine learning workflow:
-
-- Loading a dataset
-- Data preprocessing
-- Splitting data into training and testing sets
-- Feature normalization
-- Building a Neural Network
-- Training the model
-- Evaluating model performance
-- Making predictions from user input
-
-This project was created for learning the fundamentals of **Artificial Neural Networks (ANNs)** using TensorFlow.
+The project also includes a **Streamlit web application**, allowing users to interact with the trained model through a clean browser interface.
 
 ---
 
-## 📂 Project Structure
+## 🚀 Live Features
 
-```
-Coffee-Roasting-Predictor/
-│
-├── coffee_prediction.py          # Main Python script
-├── Coffee_predictor.ipynb        # Jupyter Notebook version
-├── coffee_roasting_dataset.csv   # Dataset
-├── README.md
-```
+- Predicts coffee roast quality in real time
+- Interactive Streamlit web interface
+- Neural Network built using TensorFlow/Keras
+- Automatic feature normalization
+- Binary classification using Sigmoid activation
+- Training and evaluation pipeline included
 
 ---
 
-## 🧠 Technologies Used
+## 🧠 Problem Statement
 
-- Python 3.12
-- TensorFlow / Keras
-- Pandas
-- NumPy
-- Scikit-learn
+Coffee roasting quality depends heavily on two factors:
+
+- 🌡️ Roasting Temperature
+- ⏱️ Roasting Time
+
+This project trains a neural network to learn the relationship between these variables and determine whether a roast is likely to be **Good** or **Bad**.
 
 ---
 
-## 📊 Dataset
+# 📊 Dataset
 
-The dataset contains **105 coffee roasting samples**.
-
-### Features
+The dataset contains the following features:
 
 | Feature | Description |
-|---------|-------------|
+|----------|-------------|
 | Temperature | Roasting temperature (°C) |
 | Time | Roasting time (minutes) |
 
-### Target
+**Target**
 
-| Target | Meaning |
-|---------|---------|
-| GoodRoast | 1 = Good Roast, 0 = Bad Roast |
+| Label | Meaning |
+|--------|---------|
+| 0 | Bad Roast |
+| 1 | Good Roast |
 
 ---
 
-## 🏗 Neural Network Architecture
+# 🏗️ Model Architecture
 
-```
+The model is built using TensorFlow's Sequential API.
+
+```text
 Input Layer
-      │
+      ↓
 Normalization Layer
-      │
-Dense Layer (8 neurons, ReLU)
-      │
-Dense Layer (4 neurons, ReLU)
-      │
-Output Layer (1 neuron, Sigmoid)
+      ↓
+Dense (16) → ReLU
+      ↓
+Dense (8) → ReLU
+      ↓
+Dense (4) → ReLU
+      ↓
+Dense (1) → Sigmoid
+```
+
+The output neuron uses the **Sigmoid activation function**, producing a probability between **0 and 1**.
+
+---
+
+# ⚙️ Technologies Used
+
+- Python
+- TensorFlow / Keras
+- NumPy
+- Pandas
+- Scikit-Learn
+- Streamlit
+
+---
+
+# 📈 Training Pipeline
+
+### 1. Data Loading
+
+The coffee roasting dataset is loaded using **Pandas**.
+
+---
+
+### 2. Train/Test Split
+
+The dataset is split into:
+
+- 80% Training
+- 20% Testing
+
+using Scikit-Learn's `train_test_split()`.
+
+---
+
+### 3. Feature Normalization
+
+A TensorFlow **Normalization Layer** computes the mean and standard deviation from the training data and automatically scales all inputs before they enter the neural network.
+
+---
+
+### 4. Model Training
+
+The network is trained using:
+
+- **Adam Optimizer**
+- **Binary Cross Entropy Loss**
+- **Sigmoid Output Layer**
+
+---
+
+### 5. Evaluation
+
+After training, the model is evaluated on unseen test data to measure its performance and generalization capability.
+
+---
+
+# 🌐 Streamlit Web Application
+
+The trained model is deployed as a simple interactive web application.
+
+Users can:
+
+- Select roasting temperature
+- Select roasting time
+- Predict roast quality instantly
+
+Example:
+
+```
+Temperature: 220°C
+Time: 15 minutes
+
+Prediction:
+✅ Good Roast
+Confidence: 96.8%
 ```
 
 ---
 
-## ⚙ Model Configuration
+# 📁 Project Structure
 
-| Parameter | Value |
-|-----------|-------|
-| Optimizer | Adam |
-| Loss Function | Binary Crossentropy |
-| Metric | Accuracy |
-| Epochs | 1000 |
+```text
+coffee-roast-quality-predictor/
+│
+├── app.py                  # Streamlit web application
+├── coffee_prediction.py    # Model training & prediction
+├── coffee_model.keras      # Saved trained model
+├── coffee_roasting_dataset.csv
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-## 🚀 How to Run
+# ▶️ Installation
 
-### 1. Clone the repository
+Clone the repository
 
 ```bash
-git clone https://github.com/Varad-gaikwad/coffee-roasting-prediction.git
+git clone https://github.com/yourusername/coffee-roast-quality-predictor.git
 ```
 
-### 2. Install dependencies
+Install dependencies
 
 ```bash
-pip install tensorflow pandas numpy scikit-learn
+pip install -r requirements.txt
 ```
 
-### 3. Run the program
+Run the application
 
 ```bash
-python coffee_prediction.py
+streamlit run app.py
 ```
 
 ---
 
-## 💻 Example
+# 📚 What I Learned
 
-```
-Enter roasting temperature (°C): 205
-Enter roasting time (minutes): 13
+Through this project I gained practical experience with:
 
-GOOD ROAST
-
-```
-
----
-
-## 📈 Results
-
-The trained model achieved approximately **95% test accuracy** on the provided dataset.
-
-*(Accuracy may vary slightly due to random train-test splitting.)*
-<img width="299" height="132" alt="image" src="https://github.com/user-attachments/assets/e5379736-093f-4167-a86f-db198ff6dff3" />
-
+- Building Neural Networks using TensorFlow/Keras
+- Binary Classification
+- Feature Normalization
+- Train/Test Splitting
+- Model Evaluation
+- Model Serialization (`.keras`)
+- Deploying Machine Learning models using Streamlit
+- Creating interactive ML applications
 
 ---
 
-## 📚 Concepts Covered
+# 🔮 Future Improvements
 
-This project covers:
-
-- Artificial Neural Networks (ANN)
-- Data preprocessing
-- Train/Test split
-- Feature normalization
-- Activation functions (ReLU & Sigmoid)
-- Forward propagation
-- Binary classification
-- Model evaluation
-- Prediction using trained models
+- Train on a larger real-world roasting dataset
+- Visualize prediction confidence
+- Add roast level recommendations
+- Improve UI/UX with custom Streamlit styling
+- Deploy publicly on Streamlit Community Cloud
 
 ---
 
-## 🎯 Future Improvements
-
-- Larger real-world coffee roasting dataset
-- More roasting parameters (humidity, bean type, airflow)
-- Hyperparameter tuning
-- Save and load trained model
-- Web interface using Flask or Streamlit
-- Interactive visualization of training metrics
-
----
-
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Varad**
 
-Built as a learning project to understand TensorFlow, Neural Networks, and Machine Learning fundamentals.
+Computer Science Student • Machine Learning Enthusiast • Python Developer
 
----
-
-## ⭐ If you found this project helpful, consider giving it a star!
+This project was built as part of my machine learning learning journey while studying neural networks and TensorFlow.
