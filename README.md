@@ -8,6 +8,8 @@ The project also includes a **Streamlit web application**, allowing users to int
 
 ## 🚀 Live Features
 
+-Link: https://coffee-roasting-prediction.streamlit.app/
+
 - Predicts coffee roast quality in real time
 - Interactive Streamlit web interface
 - Neural Network built using TensorFlow/Keras
@@ -138,8 +140,9 @@ Time: 15 minutes
 
 Prediction:
 ✅ Good Roast
-Confidence: 96.8%
+Confidence: 99.35%
 ```
+<img width="903" height="505" alt="image" src="https://github.com/user-attachments/assets/fc02649a-acab-41a8-9bbf-28a0986b03c9" />
 
 ---
 
@@ -193,15 +196,6 @@ Through this project I gained practical experience with:
 - Deploying Machine Learning models using Streamlit
 - Creating interactive ML applications
 
----
-
-# 🔮 Future Improvements
-
-- Train on a larger real-world roasting dataset
-- Visualize prediction confidence
-- Add roast level recommendations
-- Improve UI/UX with custom Streamlit styling
-- Deploy publicly on Streamlit Community Cloud
 
 ---
 
